@@ -1,6 +1,6 @@
 #States Navigator - Electron, visjs
 
-A simple ATM states navigator, refer to [APTRA™ Advance NDC](https://www.ncr.com/financial-services/banking-atm-software/aptra-advance-ndc), written using ES6 JavaScript, [visjs](http://visjs.org/), jQuery and [Electron](https://electron.atom.io/) framework.
+A simple ATM states navigator, refer to [APTRA™ Advance NDC](https://manualzz.com/download/22094070), written using ES6 JavaScript, [visjs](http://visjs.org/), jQuery and [Electron](https://electron.atom.io/) framework.
 
 App Home page:
 ![Home Section](img/home-section.png)
