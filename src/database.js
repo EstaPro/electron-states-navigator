@@ -63,7 +63,7 @@ class Database {
                  "ASV_VALU_PAR8 " +
           "FROM sys.atm_states_values, sys.atm_states_type " +
           "WHERE ASV_SCO_CODE = :config and "+
-          "ASV_AST_CODE = AST_CODE AND ASV_NUMB <=100",
+          "ASV_AST_CODE = AST_CODE AND ASV_NUMB <=999",
           [config],
           {
             resultSet: true, // return a result set.  Default is false
@@ -86,4 +86,4 @@ class Database {
 }
 
 const db = new Database('SYSTEM', '123', 'localhost/XE');
-db.fetch('77');
+db.fetch('10');
