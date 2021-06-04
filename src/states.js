@@ -201,22 +201,35 @@ class StatesGraph{
         console.log(state.docPath);
 
         $('#stateNum').text(stateNum);
-        $('#stateType').text(' -'+state.type +'-');
+        $('#stateType').text('-'+state.type +'-');
         $('#stateType').attr('href', state.docPath);
       
         let formString = String('\
         <div class="form-group" id="formGroup">\
-          <label for="entryLabel">entryLabel</label>\
-          <input type="number" maxlength="3" minlength="3" class="form-control" id="entryLabel" value="entryValue" placeholder="">\
+          <label for="idEntry">entryLabel</label>\
+          <input type="number" maxlength="3" minlength="3" class="form-control" id="idEntry" value="entryValue" placeholder="">\
         </div>\
         ');
         $("#modalForm").text('');
         
         state.entries.forEach((entry) => {
-          let label = String(entry[0].replace(/_/g, ' ')).toUpperCase();
+          let idEntry = entry[0];
+          let label = String(idEntry.replace(/_/g, ' ')).toUpperCase();
           let newForm = formString.replace(/entryLabel/g, label);
+          newForm = newForm.replace(/idEntry/g, idEntry);
           newForm = newForm.replace(/entryValue/g, entry[1]);
           $("#modalForm").append(newForm);
+        });
+
+        $("#saveBtn").click(()=>{
+          let updateState = $('#stateNum').text()
+          console.log("Save State <"+ updateState +'>');
+          console.log(this.states.get(updateState));
+
+          this.states.get(updateState).entries.forEach((entry)=>{
+            let newVal = $('#'+entry[0]).val();
+            entry[1] = newVal;
+          });
         });
 
         $('#myModal').modal();
