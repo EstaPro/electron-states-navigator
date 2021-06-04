@@ -197,7 +197,13 @@ class StatesGraph{
         console.log('StateNumber <'+ stateNum +'> Retrieved');
         this.center(stateNum);
 
-        $('#stateNum').text(stateNum+' -'+ state.type +'-');
+        console.log("docPath");
+        console.log(state.docPath);
+
+        $('#stateNum').text(stateNum);
+        $('#stateType').text(' -'+state.type +'-');
+        $('#stateType').attr('href', state.docPath);
+      
         let formString = String('\
         <div class="form-group" id="formGroup">\
           <label for="entryLabel">entryLabel</label>\
