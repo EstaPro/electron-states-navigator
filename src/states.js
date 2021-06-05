@@ -201,7 +201,7 @@ class StatesGraph{
         console.log(state.docPath);
 
         $('#stateNum').text(stateNum);
-        $('#stateType').text('-'+state.type +'-');
+        $('#stateType').text(state.type);
         $('#stateType').attr('href', state.docPath);
       
         let formString = String('\
